@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Inter:regular,500&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular&display=swap);
 
-@import url(https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Italiana:regular&display=swap);
 
 @charset "UTF-8";
 
@@ -27,32 +27,40 @@
   display: block;
 }
 
-._icon-arrowl:before {
+._icon-arrow:before {
   content: "\e900";
 }
 
-._icon-arrowr:before {
+._icon-clock:before {
   content: "\e901";
 }
 
-._icon-castl:before {
+._icon-location:before {
   content: "\e902";
 }
 
-._icon-github:before {
+._icon-paraghraph:before {
   content: "\e903";
 }
 
-._icon-in:before {
+._icon-play-fill:before {
   content: "\e904";
 }
 
-._icon-inst:before {
+._icon-s-instagram:before {
   content: "\e905";
 }
 
-._icon-twiter:before {
+._icon-s-tiktok:before {
   content: "\e906";
+}
+
+._icon-s-twitter:before {
+  content: "\e907";
+}
+
+._icon-s-unknown:before {
+  content: "\e908";
 }
 
 * {
@@ -75,9 +83,9 @@ body {
 }
 
 body {
-  color: #232e35;
+  color: #222220;
   line-height: 1;
-  font-family: "Inter";
+  font-family: "Montserrat";
   font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -89,7 +97,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Inter";
+  font-family: "Montserrat";
   font-size: inherit;
   line-height: inherit;
 }
@@ -167,7 +175,7 @@ h6 {
 */
 
 [class*=__container] {
-  max-width: 76.875rem;
+  max-width: 100.125rem;
   margin: 0 auto;
   padding: 0 0.9375rem;
 }
@@ -250,7 +258,6 @@ h6 {
 }
 
 .header__button:hover {
-  background-color: #7e74f1;
   color: #fff;
 }
 
@@ -264,16 +271,12 @@ h6 {
 }
 
 .menu__link {
-  color: #232e35;
+  color: #222220;
   font-family: "Inter";
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.1875;
-}
-
-.menu__link:hover {
-  color: #7e74f1;
 }
 
 .icon-menu {
@@ -313,7 +316,6 @@ h6 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #7e74f1;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
