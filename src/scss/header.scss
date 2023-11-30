@@ -8,14 +8,23 @@
     padding-top: toRem(10);
     padding-bottom: toRem(10);
     gap: toRem(15);
+    @media (max-width: $mobile) {
+      grid-template-columns: auto 1fr auto auto;
+      gap: 0;
+    }
   }
 
   &__menu {
   }
 
   &__logo {
-    img {
-      @include adaptiveValue("width", 217, 80);
+    @include adaptiveValue("width", 217, 80);
+    position: relative;
+    z-index: 5;
+    @media (max-width: $mobile) {
+      path {
+        fill: #fff;
+      }
     }
   }
 
@@ -25,6 +34,9 @@
 .menu {
   &__body {
     @media (max-width: $mobile) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: toRem(30);
       position: fixed;
       width: 100%;
       height: 100%;
@@ -32,7 +44,7 @@
       top: 0;
       overflow: auto;
       background-color: $creamyLightColor;
-      padding: toRem(80) toRem(15) toRem(30) toRem(15);
+      padding: toRem(100) toRem(15) toRem(30) toRem(15);
     }
   }
 
@@ -43,6 +55,10 @@
     row-gap: toRem(3);
     align-items: center;
     @include adaptiveValue("column-gap", 47, 15, 0, $containerWidth, 767.98);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      row-gap: toRem(20);
+    }
   }
 
   &__item {
@@ -53,6 +69,10 @@
     font-weight: 300;
     line-height: 152%;
     display: inline-block;
+    @media (max-width: $mobile) {
+      color: #fff;
+      font-size: toRem(28);
+    }
   }
 }
 .action-header {
@@ -63,12 +83,27 @@
   row-gap: toRem(3);
   align-items: center;
   @include adaptiveValue("column-gap", 47, 15, 0, $containerWidth, 767.98);
+  @media (max-width: $mobile) {
+    justify-content: center;
+    align-items: center;
+  }
   &__link {
+    display: inline-block;
+    color: $creamyLightColor;
+    font-weight: 300;
+    line-height: 152%;
+    @media (max-width: $mobile) {
+      color: #fff;
+    }
   }
 
   &__button {
     @media (max-width: $tablet) {
       padding: toRem(8) toRem(20);
+    }
+    @media (max-width: $mobile) {
+      color: #fff;
+      border: toRem(1) solid #fff;
     }
   }
 }
@@ -98,7 +133,7 @@
       position: absolute;
       width: 100%;
       height: toRem(2);
-      background-color: #000;
+      background-color: #fff;
     }
     &::before {
       top: 0;
