@@ -395,7 +395,7 @@ h6 {
     gap: 0;
   }
 
-  .header__logo path {
+  .menu-open .header__logo path {
     fill: #fff;
   }
 
@@ -408,11 +408,33 @@ h6 {
     position: fixed;
     width: 100%;
     height: 100%;
-    left: 0;
+    left: -100%;
     top: 0;
     overflow: auto;
     background-color: #c1ab81;
+    -webkit-transition: left 0.3s;
+    transition: left 0.3s;
     padding: 6.25rem 0.9375rem 1.875rem 0.9375rem;
+  }
+
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background-color: #c1ab81;
+    z-index: 2;
+    -webkit-transition: left 0.3s;
+    transition: left 0.3s;
+  }
+
+  .menu-open .menu__body {
+    left: 0;
+  }
+
+  .menu-open .menu__body::before {
+    left: 0;
   }
 
   .menu__list {
@@ -479,6 +501,12 @@ h6 {
     position: absolute;
     width: 100%;
     height: 0.125rem;
+    background-color: #c1ab81;
+  }
+
+  .menu-open .icon-menu span,
+  .menu-open .icon-menu::before,
+  .menu-open .icon-menu::after {
     background-color: #fff;
   }
 
@@ -513,6 +541,12 @@ h6 {
   }
 }
 
+@media (max-width: 47.99875em) and (max-width: 20em) {
+  .menu__body::before {
+    min-height: 4.375rem;
+  }
+}
+
 @media (max-width: 47.99875em) and (any-hover: none) {
   .icon-menu {
     cursor: default;
@@ -541,6 +575,26 @@ h6 {
 @supports not (width: clamp( 5rem , 2.8627145086rem  +  10.6864274571vw , 13.5625rem )) {
     .header__logo {
       width: calc(5rem + 8.5625 * (100vw - 20rem) / 80.125);
+    }
+}
+}
+
+@media (max-width: 47.99875em) and (min-width: 100.125em) {
+  .menu__body::before {
+    min-height: 9.375rem;
+  }
+}
+
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 100.125em) {
+@supports (min-height: clamp( 4.375rem , 3.126950078rem  +  6.24024961vw , 9.375rem )) {
+    .menu__body::before {
+      min-height: clamp( 4.375rem , 3.126950078rem  +  6.24024961vw , 9.375rem );
+    }
+}
+
+@supports not (min-height: clamp( 4.375rem , 3.126950078rem  +  6.24024961vw , 9.375rem )) {
+    .menu__body::before {
+      min-height: calc(4.375rem + 5 * (100vw - 20rem) / 80.125);
     }
 }
 }
@@ -587,6 +641,16 @@ h6 {
 
   .button:hover::before {
     opacity: 1;
+  }
+
+  .menu__link:hover {
+    color: #9d875c;
+    text-decoration: underline;
+  }
+
+  .action-header__link:hover {
+    color: #9d875c;
+    text-decoration: underline;
   }
 }
 
