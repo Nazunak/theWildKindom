@@ -1,3 +1,73 @@
 //====================================================================================================
+.footer {
+  background-color: $mainColor;
+  padding: toRem(0) toRem(0) toRem(0) toRem(0);
+  &__container {
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__logo {
+    justify-self: center;
+    @include adaptiveValue("width", 287, 80);
+  }
+
+  &__content {
+    border-right: toRem(1) solid $creamyLightColor;
+  }
+  &__menu {
+  }
+
+  &__social {
+  }
+
+  &__subscribe {
+  }
+
+  &__copy {
+  }
+}
+.menu-footer {
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.social {
+  &__item {
+  }
+}
+
+.subscribe {
+  border-left: toRem(1) solid $creamyLightColor;
+  display: grid;
+  justify-items: end;
+  &__title {
+  }
+
+  &__form {
+  }
+
+  &__input {
+  }
+
+  &__button {
+  }
+}
 
 //====================================================================================================
